@@ -1,16 +1,8 @@
 <div id="article-banner">
   <h2><%- page.title %></h2>
-  <p class="post-date"><%- date(page.date, "YYYY-MM-DD") %></p>
-  <!--<p class="post-date"><%- page.category %></p>-->
-    <% if (page.categories && page.categories.length){ %>
-  <p class="post-date">
-      <%- list_categories(page.categories, {
-        show_count: false,
-        class: 'post-date',
-        style: 'none',
-        separator: '►'
-      }) %>
-  </p>
+  <p class="post-date"><%- date(page.date, "YYYY-MM-DD H:m:s") %></p>
+    <% if (page.tags && page.tags.length) { %>
+    <%- partial('_partial/tag', { tags: page.tags }) %>
     <% } %>
   <div class="arrow-down">
     <a href="javascript:;"></a>
