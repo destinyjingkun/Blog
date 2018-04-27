@@ -1,13 +1,11 @@
 ---
-id: 1
 title: Google资深工程师深度讲解Go语言
-date: 2018-04-26 15:15:30
+date: 2018-03-28 15:15:30
 tags: [Go, 基础]
 category: Go
 ---
-# 基础
-## 1.byte(4字节8位),rune(char类型,32位,4字节的int32)
-## 2.强制类型转换,go没有隐式类型转换`
+# 1.byte(4字节8位),rune(char类型,32位,4字节的int32)
+# 2.强制类型转换,go没有隐式类型转换
 ```go
 //勾股定理
 a, b := 3, 4 //int
@@ -22,7 +20,7 @@ const a, b = 3,4
 c := math.Sqrt(a*a +b*b)
 //>> 5
 ```
-## 3.iota
+# 3.iota
 ```go
 const(
 	b=1 <<(10*iota)
@@ -32,12 +30,12 @@ const(
 	pb
 )
 ```
-## 4.指针
+# 4.指针
 golang只有值传递一种方式
 ![Alt text](./1522322191257.png)
 下面这种方式`看着像引用传递,实际是复制了a的指针地址然后传递`达到了引用传递的效果
 ![Alt text](./1522322152670.png)
-## 5.Slice
+# 5.Slice
 ![Alt text](./1522375003785.png)
 * slice可以向后扩展,但无法向前扩展
 * s[i]不可以超越len(s),向后扩展不能超过cap(s)
@@ -64,24 +62,27 @@ copy(s6, s5)
 s7 := append(s5[:3], s5[4:]...)
 //>> [5,6,10,0,0,0,0] len:8 cap:16
 ```
-## 6.Map
+# 6.Map
 * 创建 make(map[string]string)
 * 获取 m[key]
 * key不存在时,获取的是零值
 * value, ok :=m[key]判断值是否存在
 * delete(m, "key")删除
-## 7.Rune(相当于go的char类型)
+
+# 7.Rune(相当于go的char类型)
  * 使用range遍历pos,rune对
  * 使用utf8.RuneCountString()获取字符数量,而不是直接使用len()
  * 使用len()只是获取到字节长度
  * 使用[]byte获得字节
-## 8.值接收者VS指针接收者
+
+# 8.值接收者VS指针接收者
 * 要改变内容必须使用指针接收者
 * 结构体过大也考虑使用指针接收者
 * 一致性:如有指针接收者,最好都是指针接收者
 * 值接收者是go特有的
 * 值/指针接收者均可以接收值/指针
-## 9.接口
+
+# 9.接口
 ![Alt text](./1522636423539.png)
 ![Alt text](./1522636466984.png)
 ![Alt text](./1522636555167.png)
@@ -90,7 +91,7 @@ Type Assertion
 ```go
 r.(*real.Retriver)
 ```
-## 10.函数式编程
+# 10.函数式编程
 ![Alt text](./1522638766633.png)
 ![Alt text](./1522638856776.png)
 ![Alt text](./1522639321599.png)
@@ -112,14 +113,14 @@ func main(){
 	f() //5
 }
 ```
-## 11.资源管理
+# 11.资源管理
 ![Alt text](./1522653776704.png)
 ![Alt text](./1522653870889.png)
 ![Alt text](./1522654193952.png)
 ![Alt text](./1522740353096.png)
 ![Alt text](./1522740395657.png)
 ![Alt text](./1522741904099.png)
-## 12.测试
+# 12.测试
 ![Alt text](./1522743849182.png)
 ![Alt text](./1522744008349.png)
 ```powershell
@@ -138,7 +139,7 @@ go tool pprof cpu.out
 godoc -http :6060 #开启webservice文档
 ```
 ![Alt text](./1522933077902.png)
-## 13.Goroutine
+# 13.Goroutine
 ![Alt text](./1522933919194.png)
 ```go
 runtime.Gosched()//手动交出控制权
@@ -150,11 +151,11 @@ go run -race main.go #race condition 数据访问冲突,进行错误检测
 ![Alt text](./1522934767052.png)
 ![Alt text](./1522935142751.png)
 ![Alt text](./1522935187304.png)
-## 14.Channel
+# 14.Channel
 ![Alt text](./1522935343442.png)
 ![Alt text](./1522938466872.png)
 ![Alt text](./1523012404646.png)
-## 15.http
+# 15.http
 ![Alt text](./1523068699367.png)
 ![Alt text](./1523068751236.png)
 第一种
@@ -171,12 +172,13 @@ go tool pprof http://localhost:8888/debug/pprof/profile
 go tool pprof http://localhost:8888/debug/pprof/heap
 #期间访问想要测试的http request,30秒后进入prof模式,可以使用web进行查看
 ```
-## 16.广度优先算法
+# 16.广度优先算法
 1.探索顺序:上左下右
 2.结点的三种状态:
 * 已经发现还未探索(最关键,这些未探索的点需要排队,不能急于探索必须轮到才能探索)
 * 已经发现并且探索
 * 连发现都没发现
+
 ![Alt text](./1523070115303.png)
 ![Alt text](./1523070126952.png)
 ![Alt text](./1523070135463.png)

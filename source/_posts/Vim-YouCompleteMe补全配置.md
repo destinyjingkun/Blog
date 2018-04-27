@@ -1,7 +1,6 @@
 ---
-id: 3
 title: Vim-YouCompleteMe补全配置
-date: 2018-04-26 17:41:35
+date: 2018-02-05 17:41:35
 tags: [Vim]
 category: Vim
 ---
