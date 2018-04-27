@@ -5,12 +5,12 @@
       <!--<span><%- config.title %></span>-->
     </a>
     <ul class="right-list">
-      <% for(name in theme.menu) { %>
+      <% for(name in config.menu) { %>
         <li class="list-item">
-          <% if (url_for(theme.menu[name]) == '/' + path.replace('/index.html', '') || (url_for(theme.menu[name]) == '/' && is_home())) { %>
-            <a href="<%- url_for(theme.menu[name]) %>" class="item-link active"><%- name %></a>
+          <% if (url_for(config.menu[name]) == '/' + path.replace('/index.html', '') || (url_for(config.menu[name]) == '/' && is_home())) { %>
+            <a href="<%- url_for(config.menu[name]) %>" class="item-link active"><%- name %></a>
           <% } else { %>
-            <a href="<%- url_for(theme.menu[name]) %>" class="item-link"><%- name %></a>
+            <a href="<%- url_for(config.menu[name]) %>" class="item-link"><%- name %></a>
           <% } %>
         </li>
       <% } %>
@@ -22,12 +22,12 @@
     </div>
     <div class="menu-mask">
       <ul class="menu-list">
-        <% for(name in theme.menu) { %>
+        <% for(name in config.menu) { %>
           <li class="menu-item">
-            <% if (url_for(theme.menu[name]) == '/' + path.replace('/index.html', '') || (url_for(theme.menu[name]) == '/' && is_home())) { %>
-              <a href="<%- url_for(theme.menu[name]) %>" class="menu-link mobile-active"><%- name %></a>
+            <% if (url_for(config.menu[name]) == '/' + path.replace('/index.html', '') || (url_for(config.menu[name]) == '/' && is_home())) { %>
+              <a href="<%- url_for(config.menu[name]) %>" class="menu-link mobile-active"><%- name %></a>
             <% } else { %>
-              <a href="<%- url_for(theme.menu[name]) %>" class="menu-link"><%- name %></a>
+              <a href="<%- url_for(config.menu[name]) %>" class="menu-link"><%- name %></a>
             <% } %>
           </li>
         <% } %>

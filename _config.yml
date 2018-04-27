@@ -11,6 +11,12 @@ author: Evan Chen
 language:
 timezone:
 
+menu:
+ 首页: /
+ Go: /tags/#Go
+ 20穷根: /article/杜子建-20条穷根/
+ 标签: /tags/
+ 归档: /archives/
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
